@@ -2,8 +2,9 @@
 FROM openms/library
 
 COPY main.py main.py
+COPY main.cpp main.cpp
 
-#RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
+RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
 
 RUN apt-get update && apt-get install -y python3-pip && python3 -m pip install flask
 
