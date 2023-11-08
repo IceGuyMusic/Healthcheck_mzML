@@ -3,7 +3,7 @@ FROM openms/library
 
 COPY . .
 
-RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
+#RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
 
 RUN pip install flask
 EXPOSE 5000
