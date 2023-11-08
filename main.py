@@ -12,7 +12,7 @@ def healthcheck():
     results = {}
 
     for file in files:
-        if files.endswith('.mzML'):
+        if file.endswith('.mzML'):
             file_path = os.path.join(mzml_directory, file)
             #file_path = 'Test.mzML'
             result = subprocess.run(['FileInfo', '-c', '-in', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
