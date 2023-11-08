@@ -14,7 +14,7 @@ def healthcheck():
     #for file in files:
     #    if files.endswith('.mzml'):
             #file_path = os.path.join(mzml_directory, file)
-    file_path = 'Test.mzml'
+    file_path = 'Test.mzML'
     result = subprocess.run(['FileInfo', '-c', '-in', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
     # Now you can access result.stdout and result.stderr
     output = result.stdout
