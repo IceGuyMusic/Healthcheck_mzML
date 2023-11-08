@@ -3,6 +3,7 @@ FROM openms/executables
 
 COPY main.py main.py
 COPY main.cpp main.cpp
+COPY Test.mzML Test.mzML
 
 #RUN g++ main.cpp -o Healthcheck
 RUN FileFilter --help
