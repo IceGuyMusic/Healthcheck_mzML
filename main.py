@@ -15,8 +15,11 @@ def healthcheck():
     #    if files.endswith('.mzml'):
             #file_path = os.path.join(mzml_directory, file)
     file_path = 'Test.mzml'
-    result = subprocess.run(['FileInfo', '-c','-in', file_path], capture_output=True, text=True)
-    results[file] = str(result)
+    result = subprocess.run(['FileInfo', '-c', '-in', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    # Now you can access result.stdout and result.stderr
+    output = result.stdout
+    errors = result.stderr
+    results[file] = str(output, errors)
 
     return jsonify(results)
 
