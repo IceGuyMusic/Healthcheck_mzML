@@ -1,12 +1,14 @@
 #### This is the Dockerfile for the Healthcheck Service for mzML Files ####
 FROM openms/library
 
-RUN g++ -o /app/Healthcheck /app/main.cpp `pkg-config --cflags --libs OpenMS`
+COPY . /app
 
-WORKDIR /app
+#RUN g++ -o /app/Healthcheck /app/main.cpp `pkg-config --cflags --libs OpenMS`
 
-COPY app.py /app/
-RUN pip install flask
-EXPOSE 5000
+#WORKDIR /app
 
-CMD ["python", "app.py"]
+#COPY app.py /app/
+#RUN pip install flask
+#EXPOSE 5000
+
+#CMD ["python", "app.py"]
