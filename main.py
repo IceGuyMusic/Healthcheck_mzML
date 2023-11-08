@@ -19,7 +19,7 @@ def healthcheck():
     # Now you can access result.stdout and result.stderr
     output = result.stdout
     errors = result.stderr
-    results[files] = output
+    results[files[0]] = output
 
     return jsonify(results)
 
