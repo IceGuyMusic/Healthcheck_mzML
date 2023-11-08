@@ -5,7 +5,7 @@ COPY . .
 
 #RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
 
-RUN apt-get install python3-pip //
+RUN apt-get install python3-pip && \
     python3 -m pip install flask
 EXPOSE 5000
 
