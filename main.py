@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/healthcheck', methods=['GET'])
 def healthcheck():
     mzml_directory = '/app/uploads/mzml'
-    files = os.listdir(mzml_directory)
+    #files = os.listdir(mzml_directory)
     results = {}
 
     for file in files:
