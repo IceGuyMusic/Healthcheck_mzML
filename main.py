@@ -11,12 +11,12 @@ def healthcheck():
     files = ['Test.mzml']
     results = {}
 
-    for file in files:
-        if file.endswith('.mzml'):
+    #for file in files:
+    #    if files.endswith('.mzml'):
             #file_path = os.path.join(mzml_directory, file)
-            file_path = 'Test.mzml'
-            result = subprocess.run(['FileInfo', '-c','-in', file_path], capture_output=True, text=True)
-            results[file] = str(result)
+    file_path = 'Test.mzml'
+    result = subprocess.run(['FileInfo', '-c','-in', file_path], capture_output=True, text=True)
+    results[file] = str(result)
 
     return jsonify(results)
 
