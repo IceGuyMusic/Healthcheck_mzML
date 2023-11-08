@@ -1,5 +1,5 @@
-#include <MzMLFile.h>
-#include <MSExperiment.h>
+#include <FORMAT/MzMLFile.h>
+#include <KERNEL/MSExperiment.h>
 #include <iostream>
 
 // using namespace
