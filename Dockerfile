@@ -4,8 +4,7 @@ FROM openms/library
 COPY main.py main.py
 COPY main.cpp main.cpp
 
-RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
-
+RUN g++ main.cpp -L/OpenMS -o Healthcheck
 RUN apt-get update && apt-get install -y python3-pip && python3 -m pip install flask
 
 EXPOSE 5000
