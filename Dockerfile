@@ -3,12 +3,12 @@ FROM openms/library
 
 COPY . /app
 
-#RUN g++ -o /app/Healthcheck /app/main.cpp `pkg-config --cflags --libs OpenMS`
+RUN g++ -o /app/Healthcheck /app/main.cpp `pkg-config --cflags --libs OpenMS`
 
-#WORKDIR /app
+WORKDIR /app
 
-#COPY app.py /app/
-#RUN pip install flask
-#EXPOSE 5000
+COPY app.py /app/
+RUN pip install flask
+EXPOSE 5000
 
-#CMD ["python", "app.py"]
+CMD ["python", "app.py"]
