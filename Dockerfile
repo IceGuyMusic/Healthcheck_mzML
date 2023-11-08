@@ -11,9 +11,9 @@ RUN apt-get update && apt-get install -y \
   qttools5-dev \
   libeigen3-dev \
   libhdf5-dev \
+  git
 
-RUN apt-get install -y git && \
-    git clone https://github.com/OpenMS/OpenMS.git
+RUN git clone https://github.com/OpenMS/OpenMS.git
 
 RUN git submodule update --init contrib
 RUN cd OpenMS
