@@ -1,7 +1,7 @@
 #### This is the Dockerfile for the Healthcheck Service for mzML Files ####
 FROM openms/library
 
-COPY /OpenMS ./OpenMS
+COPY /OpenMS/ ./OpenMS/
 
 COPY main.py main.py
 COPY main.cpp main.cpp
