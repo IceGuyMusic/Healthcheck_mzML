@@ -6,20 +6,20 @@ app = Flask(__name__)
 
 @app.route('/healthcheck', methods=['GET'])
 def healthcheck():
-    mzml_directory = '/app/uploads/mzml'
-    #files = os.listdir(mzml_directory)
-    files = ['Test.mzML']
+    mzml_directory = './'    #'/app/uploads/mzml'
+    files = os.listdir(mzml_directory)
+    #files = ['Test.mzML']
     results = {}
 
-    #for file in files:
-    #    if files.endswith('.mzml'):
-            #file_path = os.path.join(mzml_directory, file)
-    file_path = 'Test.mzML'
-    result = subprocess.run(['FileInfo', '-c', '-in', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
-    # Now you can access result.stdout and result.stderr
-    output = result.stdout
-    errors = result.stderr
-    results[files[0]] = output
+    for file in files:
+        if files.endswith('.mzml'):
+            file_path = os.path.join(mzml_directory, file)
+            #file_path = 'Test.mzML'
+            result = subprocess.run(['FileInfo', '-c', '-in', file_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+            # Now you can access result.stdout and result.stderr
+            output = result.stdout
+            errors = result.stderr
+            results[files[0]] = errors
 
     return jsonify(results)
 
