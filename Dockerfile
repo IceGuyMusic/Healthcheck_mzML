@@ -5,7 +5,7 @@ COPY . .
 
 #RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
 
-RUN python3 pip install flask
+RUN python3 -m pip install flask
 EXPOSE 5000
 
 CMD ["python", "app.py"]
