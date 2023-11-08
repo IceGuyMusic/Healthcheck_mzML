@@ -16,10 +16,7 @@ def healthcheck():
             #file_path = os.path.join(mzml_directory, file)
             file_path = 'Test.mzml'
             result = subprocess.run(['FileInfo', '-c','-in', file_path], capture_output=True, text=True)
-            if result.returncode == 0:
-                results[file] = 'healthy'
-            else:
-                results[file] = 'corrupted'
+            results[file] = str(result)
 
     return jsonify(results)
 
