@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
   libeigen3-dev \
   libhdf5-dev \
 
-RUN git clone https://github.com/OpenMS/OpenMS.git
+RUN apt-get install -y git && \
+    git clone https://github.com/OpenMS/OpenMS.git
 
 RUN git submodule update --init contrib
 RUN cd OpenMS
