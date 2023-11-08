@@ -1,7 +1,7 @@
 #### This is the Dockerfile for the Healthcheck Service for mzML Files ####
 FROM openms/library
 
-COPY . .
+COPY app.py app.py
 
 #RUN g++ -o Healthcheck main.cpp `pkg-config --cflags --libs OpenMS`
 
