@@ -8,6 +8,7 @@ app = Flask(__name__)
 def healthcheck():
     mzml_directory = '/app/uploads/mzml'
     #files = os.listdir(mzml_directory)
+    files = 'Test.mzml'
     results = {}
 
     for file in files:
